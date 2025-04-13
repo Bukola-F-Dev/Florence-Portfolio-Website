@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Florence Portfolio Website</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><h1 class="companys-logo">Florence&#8226;B</h1></div>
+   <div class="menus">
+       <nav class="nav-bar-menus">
+           <ul class="nav-bar-menus">
+            <li class="menu"><a href="index.html" target="_blank">Home</a></li> 
+               <li class="menu"><a href="portfolio.html" target="_blank">Service</a></li>
+              <li class="menu"><a href="index.html" target="_blank">Blog</a></li> 
+              <li class="menu" ><a href="contact.html" target="_blank">Contact</a></li>  
+           </ul>
+       </nav>
+   </div>
+ <button onclick="location.href='contact.html'" class="header-button">Book a call</button> 
+       </header>  
+   
+       <div class="header-contact">
+        <h1>Contact Us</h1>
+       </div>
+    
+      <div class="container">
+        <h2>We'd love to hear from you!</h2>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+    
+          <div class="form-group">
+            <label for="email">Your Email *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+    
+          <div class="form-group">
+            <label for="message">Your Message *</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+    
+          <button type="submit">Send Message</button>
+        </form>
+    
+        <div class="contact-info">
+          <p><strong>Email:</strong> florenceprodev@gmail.com</p>
+          <p><strong>Phone:</strong> +234 906 655 5046</p>
+          <p><strong>Address:</strong> Lagos, Nigeria.</p>
+        </div>
+      </div>
+    
+      <!-- Success Message Overlay -->
+      <div class="success-overlay" id="successOverlay">
+        <div class="success-box">
+          ✅ Thank you! Your message has been sent.
+        </div>
+      </div>
+         <footer class="footer">
+           <div class="footer-container">
+             <div class="footer-brand">
+               <h2>Florence&#8226;B</h2>
+               <p>I've designed and developed professional websites<br> for industries like 
+                   fashion and interior design, <br>bringing modern aesthetics together
+                    with <br> smooth functionality.
+                    My strength lies in<br> turning visual ideas into interactive,<br>
+                     pixel-perfect digital experiences</p>
+             </div>
+             <div class="footer-links">
+               <h3>Quick Links</h3>
+               <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+             </div>
+             <div class="footer-social">
+               <h3>Follow Us</h3>
+               <a href="#"><i class="fab fa-facebook-f"></i></a>
+               <a href="#"><i class="fab fa-whatsapp"></i></a>
+               <a href="#"><i class="fab fa-instagram"></i></a>
+               <a href="#"><i class="fab fa-linkedin-in"></i></a>
+             </div>
+           </div>
+           <div class="footer-bottom">
+             <p>&copy; 2025 Florence&#8226;B. All rights reserved.</p>
+           </div>
+         </footer>
+           <script src="index.js"></script>
+           <script>
+            document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById('contactForm');
+      const overlay = document.getElementById('successOverlay');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const message = form.message.value.trim();
+
+        if (name && email && message) {
+          overlay.style.display = 'flex';
+          form.reset();
+
+          setTimeout(() => {
+            overlay.style.display = 'none';
+          }, 4000);
+        } else {
+          alert('Please fill in all required fields.');
+        }
+      });
+    });
+           </script>
+</body>
+</html>
