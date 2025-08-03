@@ -48,25 +48,26 @@ const questions = document.querySelectorAll('.faq-question');
 
     images.forEach(img => observer.observe(img));
   });
-  const hamburger = document.getElementById("hamburgerBtn");
-  const navLinks = document.getElementById("navLinks");
-  const closeBtn = document.getElementById("closeBtn");
+
   
-  // Open menu
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.add("active");
-  });
-  
-  // Close menu
-  closeBtn.addEventListener("click", () => {
-    navLinks.classList.remove("active");
-  });
-  
-  // Optional: Close menu when clicking any link
-  document.querySelectorAll(".nav-links a").forEach(link =>
-    link.addEventListener("click", () => {
+    document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburgerBtn");
+    const navLinks = document.getElementById("navLinks");
+    const closeBtn = document.getElementById("closeBtn");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
       navLinks.classList.remove("active");
-    })
-  );
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link =>
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      })
+    );
+  });
 
   
